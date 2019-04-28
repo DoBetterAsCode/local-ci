@@ -1,0 +1,28 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: rust:1.34.1
+    steps:
+      - checkout
+      - run:
+          name: Run unit tests
+          command: cargo test
+  build:
+    docker:
+      - image: rust:1.34.1
+    steps:
+      - checkout
+      - run:
+          name: Build binary
+          command: cargo build --release
+      - store_artifacts:
+          path: ./target/release/robot
+          destination: robot
+            
+workflows:
+  test-and-build:
+    jobs:
+      - test
+      - build
