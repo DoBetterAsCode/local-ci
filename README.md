@@ -35,3 +35,22 @@ To run the test job locally and ensure that it runs correctly:
 
 To run the build job locally and ensure that it runs correctly:  
 `circleci local execute --job build`
+
+### TravisCI
+
+#### Configuration
+
+**Config file**: `travis.yml`  
+**Config details**: Built-in rust support, script with two commands
+
+#### Local CI instructions
+
+Install the travis command line client: `gem install travis --no-rdoc --no-ri`
+
+To validate the configuration:  
+`travis lint`  
+_(note: this validation is a little [out of date](https://github.com/travis-ci/travis-yaml/issues/114))_
+
+Running Travis CI jobs locally:  
+Unfortunately there is no good option for this that I have been able to find.
+Several guides exist but involve manual steps (e.g. [this one](https://jonlabelle.com/snippets/view/markdown/run-travis-ci-builds-locally-with-docker)).
