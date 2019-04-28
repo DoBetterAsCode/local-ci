@@ -54,3 +54,17 @@ _(note: this validation is a little [out of date](https://github.com/travis-ci/t
 Running Travis CI jobs locally:  
 Unfortunately there is no good option for this that I have been able to find.
 Several guides exist but involve manual steps (e.g. [this one](https://jonlabelle.com/snippets/view/markdown/run-travis-ci-builds-locally-with-docker)).
+
+### Buildkite
+
+#### Configuration
+
+**Config file**: `.buildkite/pipeline.yml`  
+**Config details**: Two jobs using the docker-compose-buildkite-plugin
+
+#### Local CI instructions
+
+Install and configure the [Buildkite CLI](https://github.com/buildkite/cli).
+
+To run the pipeline locally:  
+`bk run`

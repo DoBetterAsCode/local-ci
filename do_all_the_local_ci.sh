@@ -18,3 +18,7 @@ circleci local execute --job build
 cecho $pink "Travis CI"
 cecho $pink "Validating Travis CI configuration..."
 travis lint
+
+cecho $green "Buildkite"
+cecho $green "Running Buildkite pipeline locally..."
+bk run

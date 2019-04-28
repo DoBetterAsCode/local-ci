@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  rust:
+    image: rust:1.34.1
+    working_dir: /app
+    volumes:
+      - $PWD:/app

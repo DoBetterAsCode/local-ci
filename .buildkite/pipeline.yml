@@ -1,0 +1,15 @@
+steps:
+  - label: ":rust: Run unit tests"
+    command: "cargo test"
+    plugins:
+      - docker-compose#v3.0.2:
+          run: rust
+          config: .buildkite/docker-compose.yml
+  - label: ":rust: Build binary"
+    command: "cargo build --release"
+    plugins:
+      - docker-compose#v3.0.2:
+          run: rust
+          config: .buildkite/docker-compose.yml
+    artifact_paths:
+      - "./target/release/robot"
