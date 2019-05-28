@@ -17,6 +17,9 @@ jobs:
       - run:
           name: Build binary
           command: cargo build --release
+      - run
+          name: Build binary for Mac
+          command: cargo build --release --target x86_64-apple-darwin
       - store_artifacts:
           path: ./target/release/robot
           destination: robot
